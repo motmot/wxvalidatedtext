@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource>
+  <object class="wxFrame" name="TEST_FRAME">
+    <title></title>
+    <object class="wxBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxTextCtrl" name="TEXT_ENTRY_INT">
+          
+          
+          
+          <value>123</value>
+        
+          
+        </object>
+      </object>
+      <object class="sizeritem">
+        <object class="wxTextCtrl" name="TEXT_ENTRY_FLOAT">
+          
+          
+          
+          <value>123.4</value>
+        </object>
+      </object>
+      <object class="sizeritem">
+        <object class="wxTextCtrl" name="TEXT_ENTRY_CUSTOM">
+          <value>30</value>
+        </object>
+      </object>
+    </object>
+  </object>
+</resource>
