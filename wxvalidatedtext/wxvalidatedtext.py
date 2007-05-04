@@ -17,7 +17,10 @@ def float_validator(input_string):
 
 class Validator:
     def __init__(self,ctrl,id,callback_func,validator_func,
-                 ignore_initial_value=False):
+                 ignore_initial_value=False,
+                 pending_color='#FF7F7F',
+                 valid_color='#FFFFFF',
+                 text_color='#000000'):
         
         self.ctrl = ctrl
         self.id = id
@@ -25,7 +28,10 @@ class Validator:
 
         self.validator_func = validator_func
 
-        self.ctrl.SetForegroundColour('#000000')
+        self.pending_color = pending_color
+        self.valid_color = valid_color
+        self.text_color = text_color
+        self.ctrl.SetForegroundColour(self.text_color)
 
         if ignore_initial_value:
             #print 'ignoring'
@@ -49,11 +55,11 @@ class Validator:
     def set_state(self,state):
         if state=='valid':
             self.state = state
-            self.ctrl.SetBackgroundColour('#FFFFFF')
+            self.ctrl.SetBackgroundColour(self.valid_color)
             self.last_valid_value = self.ctrl.GetValue()
         elif state=='pending':
             self.state = state
-            self.ctrl.SetBackgroundColour('#FF7F7F')
+            self.ctrl.SetBackgroundColour(self.pending_color)
         else:
             raise ValueError('did not understand state')
 
@@ -83,19 +89,21 @@ class Validator:
             self.set_state('pending')
 
 def setup_validated_integer_callback(ctrl, id, callback_func,
-                                     ignore_initial_value=False):
+                                     ignore_initial_value=False,**kwargs):
     return Validator(ctrl,
                      id,
                      callback_func,
                      integer_validator,
-                     ignore_initial_value=ignore_initial_value)
+                     ignore_initial_value=ignore_initial_value,
+                     **kwargs)
     
 def setup_validated_float_callback(ctrl, id, callback_func,
-                                   ignore_initial_value=False):
+                                   ignore_initial_value=False,**kwargs):
     return Validator(ctrl,
                      id,
                      callback_func,
                      float_validator,
-                     ignore_initial_value=ignore_initial_value)
+                     ignore_initial_value=ignore_initial_value,
+                     **kwargs)
                            
     
