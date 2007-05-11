@@ -4,7 +4,7 @@ import os, sys
 import motmot_utils
 
 from motmot_utils import get_svnversion_persistent
-version_str = '0.3.dev%(svnversion)s'
+version_str = '0.4.dev%(svnversion)s'
 version = get_svnversion_persistent(
     os.path.join('wxvalidatedtext','version.py'),
     version_str)
