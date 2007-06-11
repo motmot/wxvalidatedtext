@@ -67,7 +67,8 @@ class Validator:
         value = self.ctrl.GetValue()
         if value != self.last_valid_value:
             if self.validator_func(value):
-                self.callback_func(event)
+                if self.callback_func is not None:
+                    self.callback_func(event)
             else:
                 if self.last_valid_value is not None:
                     self.ctrl.SetValue(self.last_valid_value)
