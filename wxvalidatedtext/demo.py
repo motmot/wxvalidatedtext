@@ -10,7 +10,7 @@ import os
 
 RESFILE = pkg_resources.resource_filename(__name__,"demo.xrc") # trigger extraction
 RESDIR = os.path.split(RESFILE)[0]
-RES = xrc.wxEmptyXmlResource()
+RES = xrc.EmptyXmlResource()
 RES.LoadFromString(open(RESFILE).read())
 
 def validate_int_range(val_str):
