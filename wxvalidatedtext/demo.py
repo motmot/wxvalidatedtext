@@ -4,7 +4,7 @@ import wxvalidatedtext as wxvt
 
 from wxwrap import wx
 
-import wxPython.xrc as xrc
+import wx.xrc as xrc
 
 import os
 
