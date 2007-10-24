@@ -1,4 +1,4 @@
-from wxwrap import wx
+import wx
 from version import __version__ # wxvalidatedtext.version
 
 def integer_validator(input_string):

@@ -2,7 +2,7 @@ import pkg_resources # from setuptools
 
 import wxvalidatedtext as wxvt
 
-from wxwrap import wx
+import wx
 
 import wx.xrc as xrc
 
