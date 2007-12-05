@@ -1,5 +1,5 @@
 import wx
-from version import __version__ # wxvalidatedtext.version
+__version__ = '0.5.1' # keep in sync with setup.py
 
 def integer_validator(input_string):
     try:
@@ -21,7 +21,7 @@ class Validator:
                  pending_color='#FF7F7F',
                  valid_color='#FFFFFF',
                  text_color='#000000'):
-        
+
         self.ctrl = ctrl
         self.id = id
         self.callback_func = callback_func
@@ -47,7 +47,7 @@ class Validator:
         style = self.ctrl.GetWindowStyleFlag() # oh, yeah, baby!
         if not (style & wx.TE_PROCESS_ENTER):
             self.ctrl.SetWindowStyle( style | wx.TE_PROCESS_ENTER )
-        
+
         wx.EVT_TEXT(self.ctrl, self.id, self._OnText)
         wx.EVT_TEXT_ENTER(self.ctrl, self.id, self._OnTextEnter)
         wx.EVT_KILL_FOCUS(self.ctrl, self._OnKillFocus)
@@ -75,13 +75,13 @@ class Validator:
                 else:
                     return
         self.set_state('valid')
-        
+
     def _OnKillFocus(self,event):
         self._fix_value(event)
-        
+
     def _OnTextEnter(self,event):
         self._fix_value(event)
-        
+
     def _OnText(self,event):
         value = self.ctrl.GetValue()
         if value == self.last_valid_value:
@@ -97,7 +97,7 @@ def setup_validated_integer_callback(ctrl, id, callback_func,
                      integer_validator,
                      ignore_initial_value=ignore_initial_value,
                      **kwargs)
-    
+
 def setup_validated_float_callback(ctrl, id, callback_func,
                                    ignore_initial_value=False,**kwargs):
     return Validator(ctrl,
@@ -106,5 +106,5 @@ def setup_validated_float_callback(ctrl, id, callback_func,
                      float_validator,
                      ignore_initial_value=ignore_initial_value,
                      **kwargs)
-                           
-    
+
+
