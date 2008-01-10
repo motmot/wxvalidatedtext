@@ -19,8 +19,8 @@ class Validator:
     def __init__(self,ctrl,id,callback_func,validator_func,
                  ignore_initial_value=False,
                  pending_color='#FF7F7F',
-                 valid_color='#FFFFFF',
-                 text_color='#000000'):
+                 valid_color=None,
+                 text_color=None):
 
         self.ctrl = ctrl
         self.id = id
@@ -29,8 +29,15 @@ class Validator:
         self.validator_func = validator_func
 
         self.pending_color = pending_color
-        self.valid_color = valid_color
-        self.text_color = text_color
+        if valid_color is None:
+            self.valid_color = self.ctrl.GetBackgroundColour()
+        else:
+            self.valid_color = valid_color
+        if text_color is None:
+            self.text_color = self.ctrl.GetForegroundColour()
+        else:
+            self.text_color = text_color
+
         self.ctrl.SetForegroundColour(self.text_color)
 
         if ignore_initial_value:
