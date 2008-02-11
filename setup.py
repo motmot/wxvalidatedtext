@@ -2,6 +2,10 @@ from setuptools import setup, find_packages
 
 setup(name='motmot.wxvalidatedtext',
       description='validated integer/float text entry field for wxPython',
+      long_description = \
+"""
+This is a subpackage of the motmot family of digital image utilities.
+""",
       author='Andrew Straw',
       author_email='strawman@astraw.com',
       license='BSD',
