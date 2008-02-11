@@ -9,6 +9,7 @@ This is a subpackage of the motmot family of digital image utilities.
       author='Andrew Straw',
       author_email='strawman@astraw.com',
       license='BSD',
+      url='http://code.astraw.com/projects/motmot',
       version='0.5.1', # keep in sync with motmot/wxvalidatedtext/wxvalidatedtext.py
       zip_safe=True,
 
