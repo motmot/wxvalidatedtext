@@ -1,0 +1,9 @@
+PKG-INFO
+SOURCES.txt
+dependency_links.txt
+eager_resources.txt
+entry_points.txt
+namespace_packages.txt
+requires.txt
+top_level.txt
+zip-safe
