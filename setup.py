@@ -10,7 +10,7 @@ This is a subpackage of the motmot family of digital image utilities.
       author_email='strawman@astraw.com',
       license='BSD',
       url='http://code.astraw.com/projects/motmot',
-      version='0.5.1', # keep in sync with motmot/wxvalidatedtext/wxvalidatedtext.py
+      version='0.5.2', # sync with motmot/wxvalidatedtext/wxvalidatedtext.py
       zip_safe=True,
 
       namespace_packages = ['motmot'],
