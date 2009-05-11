@@ -14,7 +14,6 @@ This is a subpackage of the motmot family of digital image utilities.
       zip_safe=True,
 
       namespace_packages = ['motmot'],
-      install_requires = ['wxPython>=2.8',],
       packages = find_packages(),
       entry_points = {'gui_scripts': [
     'wxvalidatedtext_demo = motmot.wxvalidatedtext.demo:main',
